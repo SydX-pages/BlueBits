@@ -1,0 +1,20 @@
+author: 'SydX' # 作者名称
+author_avatar: /static/img/profile.png # 作者头像
+author_text: '喜欢瞎折腾的学生党' # 作者信息
+social: # 社交链接
+  - title: 'Github'
+    icon: 'github'
+    link: 'https://github.com/SydX-pages'
+  - title: '首页'
+    icon: 'home'
+    link: 'https://www.sydx.dpdns.org'
+# background: 'https://w.wallhaven.cc/full/nk/wallhaven-nkdop7.jpg' # 主题背景
+background: /static/img/bg4.jpg
+menu: # 页眉菜单项目
+  '关于我': /about
+  
+config:
+  copyright: true # 复制的时候弹出保留原站链接说明
+  night: true # 自动切换夜间模式
+
+
