@@ -14,6 +14,10 @@
 
 /* 0 - 全局
 -------------------------------- */
+strong{
+    font-weight: bold;
+}
+
 body, dl, dt, dd, ol, ul,
 h1, h2, h3, h4, h5, h6, p,
 pre, code, form,
@@ -163,16 +167,18 @@ abbr[title]{
     border-bottom: 1px dotted;
 }
 
-em, mark, kbd{
+/*em,*/
+mark, kbd{
     font-size: .875em;
     padding: .25em .5em;
     border-radius: .5em;
     border-radius: var(--radius);
 }
 
+/*
 em{
     color: #fff;
-    //font-style: normal;
+    font-style: normal;
     background-color: #3498db;
     background-color: var(--primary);
 }
@@ -180,6 +186,7 @@ em.red{ background: var(--red) }
 em.yellow{ background: var(--yellow) }
 em.blue{ background: var(--blue) }
 em.green{ background: var(--green) }
+*/
 
 kbd{
     color: #fff;

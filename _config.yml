@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: SydX's Blog/Notes
+title: 'BlueBits'
 subtitle: ''
 description: ''
 keywords:
 author: John Doe
 language: en
-timezone: ''
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -104,4 +104,13 @@ theme: hingle
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: rsync
+  # host: 35.212.233.223
+  host: 100.113.75.74
+  user: sydx
+  root: /home/sydx/Custom/MyProject/Webs/Blog/public/
+  # port: 6622
+  port: 22
+  delete: true
+  verbose: true
+  ignore_errors: false
