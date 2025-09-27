@@ -3,7 +3,7 @@ title: about
 date: 2025-09-26 16:44:29
 ---
 
-# About
+# 关于博客
 
 - BlueBits，[Sydwen X](https://www.sydx.dpdns.org/2025/09/26/Welcome/)的个人博客
 - 查看此博客的[github仓库](https://github.com/SydX-pages/BlueBits)

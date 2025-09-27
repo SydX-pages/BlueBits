@@ -7,7 +7,7 @@ title: 'BlueBits'
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: Sydwen X
 language: en
 timezone: Asia/Shanghai
 
@@ -105,13 +105,19 @@ theme: hingle
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: rsync
-  # host: 35.212.233.223
-  host: 100.113.75.74
+  host: 35.212.233.223
+  # host: 100.113.75.74
   user: sydx
   root: /home/sydx/Custom/MyProject/Webs/Blog/public/
-  # port: 6622
-  port: 22
+  port: 6622
+  # port: 22
   delete: true
   verbose: true
   ignore_errors: false
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  template: themes/hingle/search.xml
 

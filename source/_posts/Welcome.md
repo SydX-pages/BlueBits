@@ -17,6 +17,7 @@ categories:
     - [github](https://github.com/SydX-pages/SydX-pages)
     - [B站](https://space.bilibili.com/478112523?spm_id_from=333.1007.0.0)
     - [Youtube](https://www.youtube.com/@sydxu2750)
+    - [知乎](https://www.zhihu.com/people/yu-xi-60-38-62)
     - 尽请期待
 
 ---

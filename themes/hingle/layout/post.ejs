@@ -57,5 +57,102 @@
             </div>
         </section>
     <% } %>
-    </div>
+    
+<style>
+  /* 评论系统选项卡样式 */
+  .comment-tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .comment-tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    margin: 0 5px;
+    background-color: #f5f5f5;
+    transition: background 0.2s;
+  }
+
+  .comment-tab.active {
+    background-color: #fff;
+    font-weight: bold;
+    border-color: #888;
+  }
+
+  /* 评论内容容器 */
+  .comment-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 0 5px 5px 5px;
+    background-color: #fff;
+  }
+</style>
+
+<!-- 选项卡 -->
+<div class="comment-tabs">
+  <div class="comment-tab active" onclick="switchComment('valine', this)">FreeToSay</div>
+  <div class="comment-tab" onclick="switchComment('giscus', this)">GithubOnly</div>
+</div>
+
+<!-- 评论内容 -->
+<div class="comment-container">
+  <!-- Valine 评论区 -->
+  <div id="valine-comments">
+      <div id="vcomments"></div>
+      <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+      <script>
+          new Valine({
+              el: '#vcomments',
+              appId: '3A8hFNJdo8zM3HRx5OGG8pX4-MdYXbMMI',
+              appKey: 'myov7wtXnCt5YeCQotsZp6lh',
+              serverURLs: 'https://3a8hfnjd.api.lncldglobal.com',
+              placeholder: '欢迎留言~',
+              avatar: '',
+              visitor: true
+          });
+      </script>
+  </div>
+
+  <!-- Giscus 评论区 -->
+  <div id="giscus-comments" style="display:none;">
+      <script src="https://giscus.app/client.js"
+          data-repo="SydX-pages/BBcomments"
+          data-repo-id="R_kgDOP3_yLA"
+          data-category="Comments"
+          data-category-id="DIC_kwDOP3_yLM4Cv9ii"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="light_protanopia"
+          data-lang="zh-CN"
+          crossorigin="anonymous"
+          async>
+      </script>
+  </div>
+</div>
+
+<script>
+  function switchComment(type, tab) {
+    const valineBox = document.getElementById('valine-comments');
+    const giscusBox = document.getElementById('giscus-comments');
+    
+    // 切换显示
+    valineBox.style.display = (type === 'valine') ? 'block' : 'none';
+    giscusBox.style.display = (type === 'giscus') ? 'block' : 'none';
+
+    // 切换 active 样式
+    const tabs = document.querySelectorAll('.comment-tab');
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+  }
+</script>
+</div>
+    
 </main>
