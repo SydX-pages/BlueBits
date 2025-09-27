@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh">
+
+
   <%- partial("_partial/head") %>
+
+
+
   <body>
     <%- partial("_partial/header") %>
     <%- body %>
     <%- partial("_partial/footer") %>
   </body>
+
+
+
+<%- js('js/search') %>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    searchFunc(
+        '<%= url_for("search.xml") %>',
+        'local-search-input',
+        'local-search-result'
+    );
+});
+</script>
 </html>

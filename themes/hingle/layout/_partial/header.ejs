@@ -1,4 +1,17 @@
 <header>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<%- js('js/search.js') %> 
+<script type="text/javascript">
+	var search_path = "<%= config.search.path %>";
+	if (search_path.length == 0) {
+		search_path = "search.xml";
+	}
+	var path = "<%= config.root %>" + search_path;
+	searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
+
     <div class="head-title">
         <h4><%= config.title %></h4>
     </div>
@@ -7,9 +20,28 @@
         <div class="light-btn"></div>
         <div class="search-btn"></div>
     </div>
+
+<!--
     <form class="head-search" method="post">
         <input type="text" name="s" placeholder="搜索什么？">
     </form>
+    -->
+
+<form class="head-search" id="local-search-form" onsubmit="return false;">
+    <input type="text" id="local-search-input" placeholder="搜索什么？" autocomplete="off">
+    <div id="local-search-result" class="search-result-container"></div>
+</form>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var input = document.getElementById('local-search-input');
+    input.addEventListener('keydown', function(e){
+        if(e.key === 'Enter') e.preventDefault();
+    });
+    searchFunc('<%= url_for("search.xml") %>', 'local-search-input', 'local-search-result');
+});
+</script>
+
+
     <nav class="head-menu">
         <a href="<%= url_for() %>">首页</a>
         <div class="has-child">
