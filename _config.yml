@@ -105,12 +105,12 @@ theme: hingle
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: rsync
-  host: 35.212.233.223
-  # host: 100.113.75.74
+  # host: 35.212.233.223
+  host: 100.113.75.74
   user: sydx
   root: /home/sydx/Custom/MyProject/Webs/Blog/public/
-  port: 6622
-  # port: 22
+  # port: 6622
+  port: 22
   delete: true
   verbose: true
   ignore_errors: false
