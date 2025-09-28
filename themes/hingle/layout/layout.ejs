@@ -7,6 +7,35 @@
 
 
   <body>
+
+<span id="pageview-box">
+  当前页浏览:<span class="waline-pageview-count"></span>
+</span>
+
+<script type="module">
+  import { pageviewCount } from 'https://unpkg.com/@waline/client@v3/dist/pageview.js';
+
+  pageviewCount({
+    serverURL: 'https://waline.sydx.dpdns.org',
+    path: window.location.pathname
+  });
+</script>
+
+<style>
+#pageview-box {
+  position: fixed;
+  top: 50px;
+  left: 10px;
+  color: #aaa;
+  font-size: 14px;
+  z-index: 9999;
+  display: inline-block;  /* 或 block，避免 inline 行内问题 */
+  padding: 2px 6px;       /* 给点内边距更好看 */
+}
+</style>
+
+
+
     <%- partial("_partial/header") %>
     <%- body %>
     <%- partial("_partial/footer") %>

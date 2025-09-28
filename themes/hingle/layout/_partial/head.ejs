@@ -1,4 +1,6 @@
 <head>
+   
+
     <%
         let title = "没有标题";
 
@@ -36,4 +38,10 @@
     <% if (theme.background) { %>
     <style>body:before{ content: ''; background-image: url(<%- theme.background %>) }</style>
     <% } %>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+  />
+ 
 </head>

@@ -1,4 +1,5 @@
 <main>
+
     <div class="wrap min">
         <section class="post-title">
             <h2><%= page.title ? page.title : "没有标题的文章" %></h2>
@@ -93,26 +94,40 @@
   }
 </style>
 
+
 <!-- 选项卡 -->
 <div class="comment-tabs">
-  <div class="comment-tab active" onclick="switchComment('valine', this)">FreeToSay</div>
-  <div class="comment-tab" onclick="switchComment('giscus', this)">GithubOnly</div>
+  <div class="comment-tab active" onclick="switchComment('waline', this)">评论区</div>
+  <div class="comment-tab" onclick="switchComment('giscus', this)">GithubNeeded</div>
 </div>
 
 <!-- 评论内容 -->
 <div class="comment-container">
-  <!-- Valine 评论区 -->
-  <div id="valine-comments">
+  
+  <!-- Waline 评论区 -->
+  <div id="waline-comments">
+  <em>您可以输入一个 NickName游客评论，也欢迎 Login！</em>
+  <div id="waline"></div>
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+    init({
+      el: '#waline',
+      serverURL: 'https://waline.sydx.dpdns.org',
+      pageview: true,
+    });
+  </script>
+  </div>
+
+<!--    Valine
       <div id="vcomments"></div>
       <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
       <script>
           new Valine({
               el: '#vcomments',
-              <!--  国际版
               appId: '3A8hFNJdo8zM3HRx5OGG8pX4-MdYXbMMI',
               appKey: 'myov7wtXnCt5YeCQotsZp6lh',
               serverURLs: 'https://3a8hfnjd.api.lncldglobal.com',
-              -->
               appId: 'ZLjGZsBcGkFEVQz10YzaahvK-gzGzoHsz',
               appKey: 'hYCU79M5VL6WKap3CjynSocY',
               serverURLs: 'https://zljgzsbc.lc-cn-n1-shared.com',
@@ -121,8 +136,9 @@
               visitor: true
           });
       </script>
-  </div>
-
+    </div>
+    -->
+    
   <!-- Giscus 评论区 -->
   <div id="giscus-comments" style="display:none;">
       <script src="https://giscus.app/client.js"
@@ -143,13 +159,23 @@
   </div>
 </div>
 
+<div id="waline"></div>
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+    init({
+      el: '#waline',
+      serverURL: 'https://waline.sydx.dpdns.org',
+    });
+</script>
+
 <script>
   function switchComment(type, tab) {
-    const valineBox = document.getElementById('valine-comments');
+    const valineBox = document.getElementById('waline-comments');
     const giscusBox = document.getElementById('giscus-comments');
     
     // 切换显示
-    valineBox.style.display = (type === 'valine') ? 'block' : 'none';
+    valineBox.style.display = (type === 'waline') ? 'block' : 'none';
     giscusBox.style.display = (type === 'giscus') ? 'block' : 'none';
 
     // 切换 active 样式
@@ -158,6 +184,5 @@
     tab.classList.add('active');
   }
 </script>
-</div>
     
 </main>
