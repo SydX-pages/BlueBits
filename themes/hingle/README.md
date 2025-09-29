@@ -4,11 +4,11 @@
 
 ## 使用方法
 
-1. `Star` 本项目
-2. 从这里 [下载](https://github.com/Dreamer-Paul/Hingle/archive/master.zip) 主题源码
-3. 将文件夹重命名为 `hingle` 并放置在 Hexo 目录的 `themes` 目录下
-4. 修改 Hexo 目录下 `_config.yml` 文件的 `theme` 字段，更换成 `hingle` 即可
-5. 修改主题目录下的 `_config.yml` 文件，可参考 `_config.example.yml` 文件和 [主题文档](https://docs.paul.ren/hingle) 进行设置
+1.  `Star` 本项目
+2.  从这里 [下载](https://github.com/Dreamer-Paul/Hingle/archive/master.zip) 主题源码
+3.  将文件夹重命名为 `hingle` 并放置在 Hexo 目录的 `themes` 目录下
+4.  修改 Hexo 目录下 `_config.yml` 文件的 `theme` 字段，更换成 `hingle` 即可
+5.  修改主题目录下的 `_config.yml` 文件，可参考 `_config.example.yml` 文件和 [主题文档](https://docs.paul.ren/hingle) 进行设置
 
 ## 主题故事
 

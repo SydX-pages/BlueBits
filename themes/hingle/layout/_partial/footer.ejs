@@ -20,11 +20,14 @@
             </div>
         </section>
         <section class="sub-footer">
-            <p>© <%= date(new Date, "YYYY") %> <a href="<%= url_for() %>"><%= config.title %></a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank" rel="nofollow">Hingle</a>.</p>
+            <p>© <%= date(new Date, "YYYY" ) %> <a href="<%= url_for() %>">
+                        <%= config.title %>
+                    </a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank"
+                        rel="nofollow">Hingle</a>.</p>
         </section>
     </div>
 </footer>
 
-<%- js(["static/kico.js", "static/hingle.js"]) %>
+<%- js(["static/kico.js", "static/hingle.js" ]) %>
 
-<script>var hingle = new Paul_Hingle(<%- JSON.stringify(theme.config) %>);</script>
+    <script>var hingle = new Paul_Hingle(<% - JSON.stringify(theme.config) %>);</script>
