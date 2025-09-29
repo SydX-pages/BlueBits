@@ -1,11 +1,11 @@
 ---
 title: Welcome
 date: 2025-09-26 00:21:00
-tags: 
-    - Notes
-    - Intro
+tags:
+  - notes
+  - intro
 categories:
-    - AboutMe
+  - AboutMe
 ---
 
 # 简介
