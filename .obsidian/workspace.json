@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "6a44e1cf3cbdf063",
+        "id": "27f7a59fd11824ec",
         "type": "tabs",
         "children": [
           {
-            "id": "781735ac3fab0cf5",
+            "id": "62bc5353c6dde781",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/about/index.md",
+                "file": "source/_posts/250929.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "250929"
             }
           }
         ]
@@ -166,15 +166,40 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "terminal:Open terminal": false
     }
   },
-  "active": "781735ac3fab0cf5",
+  "active": "62bc5353c6dde781",
   "lastOpenFiles": [
+    "source/about/index.md",
+    "source/_posts/250929.md",
     "source/_posts/Welcome.md",
+    "source/_drafts/Hexo博客的搭建.md",
+    "source/_drafts/Hexo博客的搭建.md~",
+    "source/_drafts/Hexo博客的搭建/Hexo_Server2.png",
+    "source/_drafts/Hexo博客的搭建/Hexo_Server1.png",
+    "source/_drafts/Hexo博客的搭建",
+    "source/_drafts/test.md",
+    "source/_drafts/test",
+    "_config.yml~",
+    "themes/hingle/source/static/img/New Folder",
+    "source/_posts/有意思的站点（持续更新ing）.md",
+    "source/_drafts",
+    "themes/hingle/layout/post.ejs~",
+    "themes/hingle/layout/4913",
+    "db.json",
+    "public/js/search.js",
+    "public/static/img/profile.png",
+    "public/static/img/icon.png",
+    "public/static/img/bg2.jpg",
+    "public/static/img/bg4.jpg",
+    "public/static/img/bg3.jpg",
+    "public/static/img/bg.jpg",
+    "scaffolds/post.md",
     "README.md",
+    "about.md",
     "source/_posts/test-1.md",
-    "source/_posts/test.md",
-    "README"
+    "source/_posts/test.md"
   ]
 }

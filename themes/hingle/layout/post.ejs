@@ -24,19 +24,19 @@
         </article>
         <section class="post-near">
             <ul>
-                <% if( page.prev !==undefined) { %>
-                    <li>上一篇: <a href="<%= url_for(page.prev.path) %>">
-                            <%= page.prev.title %>
+                <% if( page.next !==undefined) { %>
+                    <li>上一篇: <a href="<%= url_for(page.next.path) %>">
+                            <%= page.next.title %>
                         </a></li>
                     <% } else { %>
-                        <li>上一篇: 看完啦 (つд⊂)</li>
+                        <li>上一篇: 看完啦 :)</li>
                         <% } %>
-                            <% if( page.next !==undefined) { %>
-                                <li>下一篇: <a href="<%= url_for(page.next.path) %>">
-                                        <%= page.next.title %>
+                            <% if( page.prev !==undefined) { %>
+                                <li>下一篇: <a href="<%= url_for(page.prev.path) %>">
+                                        <%= page.prev.title %>
                                     </a></li>
                                 <% } else { %>
-                                    <li>下一篇: 看完啦 (つд⊂)</li>
+                                    <li>下一篇: 看完啦 :)</li>
                                     <% } %>
             </ul>
         </section>
