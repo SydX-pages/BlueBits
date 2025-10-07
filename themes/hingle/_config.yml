@@ -21,7 +21,7 @@ social: # 社交链接
 # background: 'https://w.wallhaven.cc/full/nk/wallhaven-nkdop7.jpg' # 主题背景
 background: /static/img/bg4.jpg
 menu: # 页眉菜单项目
-  "关于此": /about
+  "关于此": /About
   "已归档": /archives
 
 config:

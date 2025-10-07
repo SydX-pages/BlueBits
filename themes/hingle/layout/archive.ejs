@@ -1,5 +1,36 @@
 <main>
+    <button class="toggle-sidebar" title="切换侧边栏">☰</button>
     <div class="wrap min">
+        <section class="sidebar">
+            <a href="/archives">
+                <h4>全部文章</h4>
+            </a></br>
+            <h4>按月份浏览</h4>
+            <% const years={}; site.posts.each(post=> {
+                const y = post.date.format('YYYY');
+                const m = post.date.format('MM');
+                if(!years[y]) years[y] = new Set();
+                years[y].add(m);
+                });
+
+                Object.keys(years).sort((a,b)=>b-a).forEach(y => { %>
+                <div class="archive-year">
+                    <strong>
+                        <%= y %> 年
+                    </strong>
+                    <% Array.from(years[y]).sort((a,b)=>b-a).forEach(m => { %>
+                        <a href="<%- url_for(`/archives/${y}/${m}/`) %>">
+                            <%= m %> 月
+                        </a>
+                        <% }) %>
+                </div>
+                <% }) %>
+                    <hr>
+                    <h4>分类</h4>
+                    <%- include('./categories.ejs') %>
+                        <hr>
+        </section>
+
         <section class="home-title">
             <% let title; if(is_category()){ title=page.category; } else if(is_archive()){ title=page.year ? ( page.year
                 + " 年" + (page.month ? " " + page.month + " 月" : "" ) ) : "归档" ; } else if(is_tag()){ title=page.tag; }

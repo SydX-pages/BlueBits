@@ -11,191 +11,242 @@
 ---- */
 
 var Paul_Hingle = function (config) {
-    var body = document.body;
-    var content = ks.select(".post-content:not(.is-special), .page-content:not(.is-special)");
+  var body = document.body;
+  var content = ks.select(
+    ".post-content:not(.is-special), .page-content:not(.is-special)",
+  );
 
-    // 菜单按钮
-    this.header = function () {
-        var menu = document.getElementsByClassName("head-menu")[0];
+  // 菜单按钮
+  this.header = function () {
+    var menu = document.getElementsByClassName("head-menu")[0];
 
-        ks.select(".toggle-btn").onclick = function () {
-            menu.classList.toggle("active");
-        };
-
-        ks.select(".light-btn").onclick = this.night;
-
-        var search = document.getElementsByClassName("search-btn")[0];
-        var bar = document.getElementsByClassName("head-search")[0];
-
-        search.addEventListener("click", function () {
-            bar.classList.toggle("active");
-        })
+    ks.select(".toggle-btn").onclick = function () {
+      menu.classList.toggle("active");
     };
 
-    // 关灯切换
-    this.night = function () {
-        if(body.classList.contains("dark-theme")){
-            body.classList.remove("dark-theme");
-            document.cookie = "night=false;" + "path=/;" + "max-age=21600";
-        }
-        else{
-            body.classList.add("dark-theme");
-            document.cookie = "night=true;" + "path=/;" + "max-age=21600";
-        }
-    };
+    ks.select(".light-btn").onclick = this.night;
 
-    // 目录树
-    this.tree = function () {
-        const wrap = ks.select(".wrap");
-        const headings = content.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    var search = document.getElementsByClassName("search-btn")[0];
+    var bar = document.getElementsByClassName("head-search")[0];
 
-        if (headings.length === 0) {
-            return;
-        }
+    search.addEventListener("click", function () {
+      bar.classList.toggle("active");
+    });
+  };
 
-        body.classList.add("has-trees");
+  // 关灯切换
+  this.night = function () {
+    if (body.classList.contains("dark-theme")) {
+      body.classList.remove("dark-theme");
+      document.cookie = "night=false;" + "path=/;" + "max-age=21600";
+    } else {
+      body.classList.add("dark-theme");
+      document.cookie = "night=true;" + "path=/;" + "max-age=21600";
+    }
+  };
 
-        // 计算数量，得出最高层级
-        const levelCount = { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 };
+  // 手机端侧边栏切换
+  (function () {
+    const sidebar = document.querySelector(".sidebar");
+    const toggleBtn = document.querySelector(".toggle-sidebar");
 
-        headings.forEach((el) => {
-            const tagName = el.tagName.toLowerCase();
-            levelCount[tagName]++;
-        });
+    if (!sidebar || !toggleBtn) return;
 
-        let firstLevel = 1;
-        if (levelCount.h1 === 0 && levelCount.h2 > 0) {
-            firstLevel = 2;
-        }
-        else if (levelCount.h1 === 0 && levelCount.h2 === 0 && levelCount.h3 > 0) {
-            firstLevel = 3;
-        }
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
 
-        // 目录树节点
-        const trees = ks.create("section", {
-            class: "article-list",
-            html: `<h4><span class="title">目录</span></h4>`
-        });
+    // 点击 sidebar 外部区域自动关闭
+    document.addEventListener("click", (e) => {
+      if (window.innerWidth > 768) return; // 仅在手机端生效
+      if (!sidebar.classList.contains("active")) return;
+      if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
+        sidebar.classList.remove("active");
+      }
+    });
+  })();
+  // 目录树
+  this.tree = function () {
+    const wrap = ks.select(".wrap");
+    const headings = content.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-        ks.each(headings, (t, index) => {
-            const text = t.innerText;
-
-            t.id = "title-" + index;
-
-            const level = Number(t.tagName.substring(1)) - firstLevel + 1;
-            const className = `item-${level}`;
-
-            trees.appendChild(ks.create("a", { class: className, text, href: `#title-${index}` }));
-        });
-
-        wrap.appendChild(trees);
-
-        // 绑定元素
-        const buttons = ks.select("footer .buttons");
-        const btn = ks.create("button", {
-            class: "toggle-list",
-            attr: [
-                {name: "title", value: "切换文章目录"},
-            ],
-        });
-        buttons.appendChild(btn);
-
-        btn.addEventListener("click", () => {
-            trees.classList.toggle("active");
-        });
-    };
-
-    // 自动添加外链
-    this.links = function () {
-        var l = content.getElementsByTagName("a");
-
-        if(l){
-            ks.each(l, function (t) {
-                t.target = "_blank";
-            });
-        }
-    };
-
-    this.comment_list = function () {
-        ks(".comment-content [href^='#comment']").each(function (t) {
-            var item = ks.select(t.getAttribute("href"));
-
-            t.onmouseover = function () {
-                item.classList.add("active");
-            };
-
-            t.onmouseout = function () {
-                item.classList.remove("active");
-            };
-        });
-    };
-
-    // 返回页首
-    this.to_top = function () {
-        var btn = document.getElementsByClassName("to-top")[0];
-        var scroll = document.documentElement.scrollTop || document.body.scrollTop;
-
-        scroll >= window.innerHeight / 2 ? btn.classList.add("active") : btn.classList.remove("active");
-    };
-
-    this.header();
-
-    if(content){
-        this.tree();
-        this.links();
-        this.comment_list();
+    if (headings.length === 0) {
+      return;
     }
 
-    // 返回页首
-    window.addEventListener("scroll", this.to_top);
+    body.classList.add("has-trees");
 
-    // 如果开启自动夜间模式
-    if(config.night){
-        var hour = new Date().getHours();
+    // 计算数量，得出最高层级
+    const levelCount = { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 };
 
-        if(document.cookie.indexOf("night") === -1 && (hour <= 5 || hour >= 22)){
-            document.body.classList.add("dark-theme");
-            document.cookie = "night=true;" + "path=/;" + "max-age=21600";
-        }
-    }
-    else if(document.cookie.indexOf("night") !== -1){
-        if(document.cookie.indexOf("night=true") !== -1){
-            document.body.classList.add("dark-theme");
-        }
-        else{
-            document.body.classList.remove("dark-theme");
-        }
-    }
+    headings.forEach((el) => {
+      const tagName = el.tagName.toLowerCase();
+      levelCount[tagName]++;
+    });
 
-    // 如果开启复制内容提示
-    if(config.copyright){
-        document.oncopy = function () {
-            ks.notice("复制内容请注明来源并保留版权信息！", {color: "yellow", overlay: true})
-        };
+    let firstLevel = 1;
+    if (levelCount.h1 === 0 && levelCount.h2 > 0) {
+      firstLevel = 2;
+    } else if (
+      levelCount.h1 === 0 &&
+      levelCount.h2 === 0 &&
+      levelCount.h3 > 0
+    ) {
+      firstLevel = 3;
     }
 
-    //
-    // ! Hexo 特别功能
-    //
+    // 目录树节点
+    const trees = ks.create("section", {
+      class: "article-list",
+      html: `<h4><span class="title">目录</span></h4>`,
+    });
 
-    // Hexo 百度搜索
-    this.hexo_search = function () {
-        var form = ks.select(".head-search"), input = ks.select(".head-search input");
+    ks.each(headings, (t, index) => {
+      const text = t.innerText;
 
-        form.onsubmit = function (ev) {
-            ev.preventDefault();
+      t.id = "title-" + index;
 
-            window.open("https://www.baidu.com/s?wd=site:" + location.host + " " + input.value.trim());
+      const level = Number(t.tagName.substring(1)) - firstLevel + 1;
+      const className = `item-${level}`;
+
+      trees.appendChild(
+        ks.create("a", { class: className, text, href: `#title-${index}` }),
+      );
+    });
+
+    wrap.appendChild(trees);
+
+    // 绑定元素
+    const buttons = ks.select("footer .buttons");
+    const btn = ks.create("button", {
+      class: "toggle-list",
+      attr: [{ name: "title", value: "切换文章目录" }],
+    });
+    buttons.appendChild(btn);
+
+    btn.addEventListener("click", () => {
+      trees.classList.toggle("active");
+    });
+  };
+
+  // 自动添加外链
+
+  this.links = function () {
+    var l = content.getElementsByTagName("a");
+
+    if (l) {
+      ks.each(l, function (t) {
+        var href = t.getAttribute("href");
+        // 只对外部链接加 _blank
+        if (
+          href &&
+          !href.startsWith("#") &&
+          !href.startsWith("/") &&
+          !href.startsWith(window.location.origin)
+        ) {
+          t.target = "_blank";
+        } else {
+          t.removeAttribute("target"); // 内部链接/锚点不新开标签页
         }
+      });
     }
+  };
 
-    this.hexo_search();
+  this.comment_list = function () {
+    ks(".comment-content [href^='#comment']").each(function (t) {
+      var item = ks.select(t.getAttribute("href"));
+
+      t.onmouseover = function () {
+        item.classList.add("active");
+      };
+
+      t.onmouseout = function () {
+        item.classList.remove("active");
+      };
+    });
+  };
+
+  // 返回页首
+  this.to_top = function () {
+    var btn = document.getElementsByClassName("to-top")[0];
+    var scroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+    scroll >= window.innerHeight / 2
+      ? btn.classList.add("active")
+      : btn.classList.remove("active");
+  };
+
+  this.header();
+
+  if (content) {
+    this.tree();
+    this.links();
+    this.comment_list();
+  }
+
+  // 返回页首
+  window.addEventListener("scroll", this.to_top);
+
+  // 如果开启自动夜间模式
+  if (config.night) {
+    var hour = new Date().getHours();
+
+    if (document.cookie.indexOf("night") === -1 && (hour <= 5 || hour >= 22)) {
+      document.body.classList.add("dark-theme");
+      document.cookie = "night=true;" + "path=/;" + "max-age=21600";
+    }
+  } else if (document.cookie.indexOf("night") !== -1) {
+    if (document.cookie.indexOf("night=true") !== -1) {
+      document.body.classList.add("dark-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+    }
+  }
+
+  // 如果开启复制内容提示
+  if (config.copyright) {
+    document.oncopy = function () {
+      ks.notice("复制内容请注明来源并保留版权信息！", {
+        color: "yellow",
+        overlay: true,
+      });
+    };
+  }
+
+  //
+  // ! Hexo 特别功能
+  //
+
+  // Hexo 百度搜索
+  this.hexo_search = function () {
+    var form = ks.select(".head-search"),
+      input = ks.select(".head-search input");
+
+    form.onsubmit = function (ev) {
+      ev.preventDefault();
+
+      window.open(
+        "https://www.baidu.com/s?wd=site:" +
+          location.host +
+          " " +
+          input.value.trim(),
+      );
+    };
+  };
+
+  this.hexo_search();
 };
 
 // 图片缩放
-ks.image(".post-content:not(.is-special) img, .page-content:not(.is-special) img");
+ks.image(
+  ".post-content:not(.is-special) img, .page-content:not(.is-special) img",
+);
 
 // 请保留版权说明
-if(window.console && window.console.log){
-    console.log("%c Hingle %c https://paugram.com ","color: #fff; margin: 1em 0; padding: 5px 0; background: #6f9fc7;","margin: 1em 0; padding: 5px 0; background: #efefef;");
+if (window.console && window.console.log) {
+  console.log(
+    "%c Hingle %c https://paugram.com ",
+    "color: #fff; margin: 1em 0; padding: 5px 0; background: #6f9fc7;",
+    "margin: 1em 0; padding: 5px 0; background: #efefef;",
+  );
 }

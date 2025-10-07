@@ -1,0 +1,35 @@
+<% const categories=site.categories.sort('name').toArray(); function buildTree(cats) { const tree={}; cats.forEach(cat=>
+    {
+    const parts = cat.path.replace(/^categories\//, '').split('/').filter(Boolean);
+    let node = tree;
+    parts.forEach((p, i) => {
+    if (!node[p]) node[p] = { _cat: null, _children: {} };
+    if (i === parts.length - 1) node[p]._cat = cat;
+    node = node[p]._children;
+    });
+    });
+    return tree;
+    }
+
+    function renderTree(tree) {
+    %>
+    <ul>
+        <% Object.keys(tree).forEach(name=> {
+            const node = tree[name];
+            const cat = node._cat;
+            %>
+            <li>
+                <% if (cat) { %>
+                    <a href="<%- url_for(cat.path) %>">
+                        <%= cat.name %>
+                    </a>
+                    <% } else { %>
+                        <%= name %>
+                            <% } %>
+                                <%= renderTree(node._children) %>
+            </li>
+            <% }) %>
+    </ul>
+    <% } %>
+
+        <%- renderTree(buildTree(categories)) %>

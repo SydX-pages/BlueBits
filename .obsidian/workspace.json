@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "27f7a59fd11824ec",
+        "id": "e5e2b495d618982a",
         "type": "tabs",
         "children": [
           {
-            "id": "62bc5353c6dde781",
+            "id": "4b128d52cf4e7820",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/about/index.md",
+                "file": "source/_posts/251007.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "251007"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "source/_drafts/Hexo博客的搭建.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for Hexo博客的搭建"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "source/_drafts/Hexo博客的搭建.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links from Hexo博客的搭建"
             }
           },
           {
@@ -142,16 +142,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
-                "followCursor": false,
+                "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -170,16 +170,21 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "62bc5353c6dde781",
+  "active": "4b128d52cf4e7820",
   "lastOpenFiles": [
-    "_config.yml~",
-    "themes/hingle/source/static/custom.css~",
-    "themes/hingle/source/js/copy.js~",
-    "themes/hingle/layout/layout.ejs~",
+    "public/2025/10/07/251007/index.html",
+    "public/2025/10/07/251007",
+    "source/_posts/251007.md~",
+    "source/_posts/250929.md",
+    "source/_posts/251007.md",
+    "source/_posts/Welcome.md",
+    "source/_posts/4913",
+    "source/_posts/Hexo博客的搭建.md",
+    "source/_posts/Hexo博客的搭建.md~",
+    "source/about/index.md~",
+    "themes/hingle/source/static/hingle.js~",
+    "public/static/hingle.js~",
     "db.json",
-    "public/js/search.js",
-    "public/js/copy.js",
-    "public/js",
     "public/static/img/profile.png",
     "public/static/img/icon.png",
     "public/static/img/bg4.jpg",
@@ -188,7 +193,18 @@
     "public/static/img/bg.jpg",
     "public/static/kico.js",
     "public/static/kico.css",
-    "public/static/img",
+    "public/2025/10/07/Hexo博客的搭建/Hexo_Server2.png",
+    "public/2025/10/07/Hexo博客的搭建/Hexo_Server1.png",
+    "public/2025/10/07/Hexo博客的搭建/Cloudflare2.png",
+    "public/2025/10/07/Hexo博客的搭建/Cloudflare1.png",
+    "node_modules/@types/mdurl/README.md",
+    "node_modules/@types/markdown-it/README.md",
+    "node_modules/markdown-it-anchor/README.md",
+    "node_modules/@types/linkify-it/README.md",
+    "source/_posts/test.md",
+    "source/_drafts/test.md",
+    "source/_drafts/Hexo博客的搭建.md",
+    "source/about/index.md",
     "node_modules/prism-themes/README.md",
     "node_modules/prism-themes/CHANGELOG.md",
     "node_modules/hexo-prism-plugin/node_modules/readable-stream/README.md",
@@ -201,20 +217,6 @@
     "node_modules/source-map-resolve/readme.md",
     "node_modules/source-map-resolve/changelog.md",
     "node_modules/hexo-prism-plugin/node_modules/readdirp/node_modules/expand-brackets/node_modules/is-descriptor/README.md",
-    "node_modules/snapdragon/node_modules/is-descriptor/README.md",
-    "node_modules/static-extend/node_modules/is-descriptor/README.md",
-    "node_modules/class-utils/node_modules/is-descriptor/README.md",
-    "node_modules/object-copy/node_modules/is-descriptor/README.md",
-    "node_modules/is-descriptor/README.md",
-    "node_modules/is-accessor-descriptor/README.md",
-    "node_modules/is-data-descriptor/README.md",
-    "node_modules/atob/README.md",
-    "node_modules/hexo-prism-plugin/node_modules/readdirp/node_modules/expand-brackets/node_modules/is-descriptor/CHANGELOG.md",
-    "node_modules/node-prismjs/node_modules/prismjs/CHANGELOG.md",
-    "node_modules/snapdragon/node_modules/is-descriptor/CHANGELOG.md",
-    "node_modules/static-extend/node_modules/is-descriptor/CHANGELOG.md",
-    "node_modules/class-utils/node_modules/is-descriptor/CHANGELOG.md",
-    "source/_drafts/Hexo博客的搭建/Hexo_Server2.png",
-    "source/_drafts/Hexo博客的搭建/Hexo_Server1.png"
+    "node_modules/snapdragon/node_modules/is-descriptor/README.md"
   ]
 }

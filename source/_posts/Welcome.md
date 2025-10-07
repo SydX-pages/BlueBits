@@ -2,11 +2,18 @@
 title: Welcome
 date: 2025-09-26 00:21:00
 tags:
-  - notes
   - intro
 categories:
   - AboutMe
 ---
+
+<div style="text-align:right; color:#b3c5d8 !important;">
+  <em style="color:#b3c5d8: !important;"> —— 
+        Welcome to My Blog!
+    </em>
+</div>
+<div style="clear:both;"></div>
+<!--more-->
 
 # 简介
 
@@ -14,11 +21,11 @@ categories:
 - 爱~~code~~、吉他、战略游戏、**瞎折腾**
 - 我是一名~~prompt engineer~~、blues吉他手、~~长发男~~、P社玩家
 - 其他账号：
-    - [github](https://github.com/SydX-pages/SydX-pages)
-    - [B站](https://space.bilibili.com/478112523?spm_id_from=333.1007.0.0)
-    - [Youtube](https://www.youtube.com/@sydxu2750)
-    - [知乎](https://www.zhihu.com/people/yu-xi-60-38-62)
-    - 尽请期待
+  - [github](https://github.com/SydX-pages/SydX-pages)
+  - [B站](https://space.bilibili.com/478112523?spm_id_from=333.1007.0.0)
+  - [Youtube](https://www.youtube.com/@sydxu2750)
+  - [知乎](https://www.zhihu.com/people/yu-xi-60-38-62)
+  - 尽请期待
 
 ---
 
@@ -34,18 +41,18 @@ categories:
 ## 关于博客
 
 - 博客名
-    - ~~只会五声音阶的~~Blues乐手 -> **Blue**
-    - 以计算机技术为主的个人blog -> **Bits**
-    - 以及Bits可以是Beats的谐音
+  - ~~只会五声音阶的~~Blues乐手 -> **Blue**
+  - 以计算机技术为主的个人blog -> **Bits**
+  - 以及Bits可以是Beats的谐音
 - 有如下分区
     <!--25.09.26-->
-    - Docs:技术心得、简易教程
-    - Writings:~~我是个作家~~
-    - Chats:闲谈和牢骚
+  - Docs:技术心得、简易教程
+  - Writings:~~我是个作家~~
+  - Chats:闲谈和牢骚
 - 小问题
-	1. 评论区无法跟随整体调整黑暗模式
-	2. 站内搜索功能显示略丑陋
-	3. 标签分类有问题，似乎无法分级标签
+  1.  评论区无法跟随整体调整黑暗模式
+  2.  站内搜索功能显示略丑陋
+  3.  标签分类有问题，似乎无法分级标签
 - 近期目标：~~虽然我现在还什么都不会但是我要~~开发自己的博客框架然后migrate过去
 
 ---
@@ -70,4 +77,4 @@ categories:
 
 ---
 
-*不是这个主题的md渲染怎么怪怪的*
+_不是这个主题的md渲染怎么怪怪的_

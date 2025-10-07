@@ -1,5 +1,23 @@
 <main>
+
+    <button class="toggle-sidebar" title="切换侧边栏">☰</button>
     <div class="wrap min">
+        <section class="sidebar">
+
+            <h4>置顶</h4>
+            <ul style="display:inline-block">
+                <li><a href="/About">[Page]About</a></li>
+                <li><a href="/2025/09/26/Welcome">[Post]Welcome</a></li>
+                <li><em style="color:cornflowerblue;">[email]i@sydx.dpdns.org</em></li>
+            </ul>
+            </br>
+            <hr>
+            <h4>分类</h4>
+            <%- include('./categories.ejs') %>
+                <hr>
+        </section>
+
+
         <section class="home-title">
             <h1>
                 <%= config.title %>
@@ -8,10 +26,12 @@
                 <%= config.description %>
             </span>
             <%- partial("_partial/social") %>
+
         </section>
         <%- partial("_partial/archive-list") %>
             <section class="page-navigator">
                 <%- paginator({ prev_text: "«" , next_text: "»" }) %>
             </section>
+
     </div>
 </main>

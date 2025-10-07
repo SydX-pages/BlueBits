@@ -3,10 +3,18 @@ title: 有意思的站点（持续更新ing）
 date: 2025-09-29 19:13:32
 tags:
   - collection
-  - notes
+  - memo
 categories:
-  - Navigator
+  - A-guide
 ---
+
+<div style="text-align:right; color:#b3c5d8 !important;">
+  <em style="color:#b3c5d8: !important;"> —— 
+        网址导航罢了...
+    </em>
+</div>
+<div style="clear:both;"></div>
+<!--more-->
 
 # 常用网站
 
@@ -27,7 +35,7 @@ categories:
 
 # 有趣网站
 
-1. [STRML](https://www.strml.net/)  --- `Samuel Reed's Blog(膜拜大佬)`
+1. [STRML](https://www.strml.net/) --- `Samuel Reed's Blog(膜拜大佬)`
 2. [Your-Name-In-Landsat](https://science.nasa.gov/specials/your-name-in-landsat/) --- `NASA帮你找名字`
 3. [测速](https://test.ustc.edu.cn/)
 4. ......

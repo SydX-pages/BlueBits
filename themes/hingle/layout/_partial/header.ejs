@@ -49,7 +49,8 @@
             <div class="has-child">
                 <a href>分类</a>
                 <div class="sub-menu">
-                    <%- list_categories({ style: false, separator: "" , show_count: false, depth: 1 }) %>
+                    <!--      <%- list_categories({ style: false, separator: "" , show_count: false, depth: 1 }) %>-->
+                    <%- include('../categories.ejs') %>
                 </div>
             </div>
             <% for (var i in theme.menu){ %>
