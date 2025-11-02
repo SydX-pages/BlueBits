@@ -187,6 +187,16 @@ var Paul_Hingle = function (config) {
   // 返回页首
   window.addEventListener("scroll", this.to_top);
 
+// 获取按钮
+var btn = document.getElementsByClassName("to-top")[0];
+
+// 点击按钮滚回顶部
+btn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" // 平滑滚动
+  });
+});
   // 如果开启自动夜间模式
   if (config.night) {
     var hour = new Date().getHours();
