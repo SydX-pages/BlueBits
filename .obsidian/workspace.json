@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/251007.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "251007"
+              "title": "README"
             }
           }
         ]
@@ -172,14 +172,14 @@
   },
   "active": "4b128d52cf4e7820",
   "lastOpenFiles": [
+    "source/_posts/Hexo博客的搭建.md",
+    "source/_posts/251007.md",
     "public/2025/10/07/251007/index.html",
     "public/2025/10/07/251007",
     "source/_posts/251007.md~",
     "source/_posts/250929.md",
-    "source/_posts/251007.md",
     "source/_posts/Welcome.md",
     "source/_posts/4913",
-    "source/_posts/Hexo博客的搭建.md",
     "source/_posts/Hexo博客的搭建.md~",
     "source/about/index.md~",
     "themes/hingle/source/static/hingle.js~",
@@ -192,7 +192,6 @@
     "public/static/img/bg2.jpg",
     "public/static/img/bg.jpg",
     "public/static/kico.js",
-    "public/static/kico.css",
     "public/2025/10/07/Hexo博客的搭建/Hexo_Server2.png",
     "public/2025/10/07/Hexo博客的搭建/Hexo_Server1.png",
     "public/2025/10/07/Hexo博客的搭建/Cloudflare2.png",
