@@ -26,6 +26,6 @@
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-next": "^8.25.0",
     "lunr": "^2.3.9",
-    "strip-ansi": "^6.0.1"
+    "strip-ansi": "^7.2.0"
   }
 }
